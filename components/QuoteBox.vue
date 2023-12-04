@@ -24,55 +24,55 @@ defineProps<{
 
 
 <style>
-.content{
-  border-radius: 0.625rem;
-  background: #E5E7EB;
-  min-height: 180px;
-  padding: 2em 1.5em;
+.content {
   width: 100%;
   height: 100%;
-  display:flex;
+  min-width: 360px;
+  min-height: 180px;
+  padding: 2em 1.5em;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 1.875rem;
+  border-radius: 0.625rem;
+  background: #E5E7EB;
   box-sizing: border-box;
 }
 
 .quote {
-  color: var(--default-gray-900, #111827);
-  text-align: center;
-  font-family: IBM Plex Mono;
+  font-family: serif;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   font-size: 1.5em;
+  color: var(--default-gray-900, #111827);
+  text-align: center;
 }
 
 .author {
-  color: var(--default-gray-900, #111827);
-  text-align: center;
-  font-family: IBM Plex Mono;
+  font-family: serif;
   font-style: italic;
   font-weight: 400;
   line-height: normal;
   font-size: 1em;
+  color: var(--default-gray-900, #111827);
+  text-align: center;
 }
 
-
 .spinner {
-    animation: rotation 1.5s infinite linear;
-    height: 2em;
+  height: 2em;
+  animation: rotation 1.5s infinite linear;
 }
 
 @keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
 
 </style>
