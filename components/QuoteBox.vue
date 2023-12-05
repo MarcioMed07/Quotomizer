@@ -6,19 +6,19 @@ const { data, pending } = defineProps<{
 const url = useRequestURL();
 const showCopyLabel = ref(false);
 const showShareLabel = ref(false);
-const copy = () => {
-  copyQuote(data.content, data.author);
+const copy = (quote:string, author:string) => {
+  copyQuote(quote, author);
   showCopyLabel.value = true;
   setTimeout(() => (showCopyLabel.value = false), 1000);
 };
 
-const share = () => {
+const share = (id:string) => {
   if (navigator.share) {
     navigator.share({
-      url: `${url.origin}/quotes/${data._id}`,
+      url: `${url.origin}/quotes/${id}`,
     });
   } else {
-    navigator.clipboard.writeText(`${url.origin}/quotes/${data._id}`);
+    navigator.clipboard.writeText(`${url.origin}/quotes/${id}`);
     showShareLabel.value = true;
     setTimeout(() => (showShareLabel.value = false), 1000);
   }
@@ -29,13 +29,13 @@ const share = () => {
   <div>
     <div class="content" v-if="!pending">
       <div class="copy">
-        <font-awesome-icon @click="copy" icon="copy" />
+        <font-awesome-icon @click="copy(data.content, data.author)" icon="copy" />
         <label v-if="showCopyLabel">copied</label>
       </div>
       <h2 class="quote">{{ data?.content }}</h2>
       <span class="author">{{ data?.author }}</span>
       <div class="share">
-        <IconButton @click="share" icon="share" />
+        <IconButton @click="share(data._id)" icon="share" />
         <label v-if="showShareLabel">copied</label>
       </div>
     </div>
