@@ -3,6 +3,9 @@ const { quotableUrl } = useAppConfig();
 const { data, error, pending, refresh } = await useLazyFetch<Quote>(
   `${quotableUrl}/random`,
 );
+if (error && error.value) {
+  throw createError(error.value);
+}
 if (data) {
   const url = useRequestURL();
   addMeta({

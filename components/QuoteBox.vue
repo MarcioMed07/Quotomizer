@@ -6,13 +6,13 @@ const { data, pending } = defineProps<{
 const url = useRequestURL();
 const showCopyLabel = ref(false);
 const showShareLabel = ref(false);
-const copy = (quote:string, author:string) => {
+const copy = (quote: string, author: string) => {
   copyQuote(quote, author);
   showCopyLabel.value = true;
   setTimeout(() => (showCopyLabel.value = false), 1000);
 };
 
-const share = (id:string) => {
+const share = (id: string) => {
   if (navigator.share) {
     navigator.share({
       url: `${url.origin}/quotes/${id}`,
@@ -29,7 +29,10 @@ const share = (id:string) => {
   <div>
     <div class="content" v-if="!pending">
       <div class="copy">
-        <font-awesome-icon @click="copy(data.content, data.author)" icon="copy" />
+        <font-awesome-icon
+          @click="copy(data.content, data.author)"
+          icon="copy"
+        ></font-awesome-icon>
         <label v-if="showCopyLabel">copied</label>
       </div>
       <h2 class="quote">{{ data?.content }}</h2>
@@ -40,7 +43,7 @@ const share = (id:string) => {
       </div>
     </div>
     <div class="content" v-else>
-      <font-awesome-icon class="spinner" icon="spinner" />
+      <font-awesome-icon class="spinner" icon="spinner"></font-awesome-icon>
     </div>
   </div>
 </template>
@@ -72,6 +75,7 @@ const share = (id:string) => {
   font-size: 1.5em;
   color: var(--default-gray-900, #111827);
   text-align: center;
+  font-family: "Courgette";
 }
 
 .author {

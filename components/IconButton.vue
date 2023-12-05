@@ -1,5 +1,7 @@
 <template>
-  <button class="button"><font-awesome-icon :icon="icon" /></button>
+  <button class="button">
+    <font-awesome-icon :icon="icon"></font-awesome-icon>
+  </button>
 </template>
 
 <script setup lang="ts">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { data, refresh, pending } = defineProps<{
   pending: boolean;
-  data: Quote | null;
+  data: Quote;
   refresh?: Function;
 }>();
 </script>
