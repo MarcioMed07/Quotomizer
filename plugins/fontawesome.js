@@ -1,9 +1,9 @@
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faTwitterSquare, faTwitch, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
-import { faShuffle, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import { faHome, faShuffle, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGithubSquare, faShuffle, faSpinner)
+library.add(faGithubSquare, faShuffle, faSpinner, faHome)
 
 config.autoAddCss = false
 

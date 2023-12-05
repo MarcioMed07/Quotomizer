@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { type Quote } from '~/pages/index.vue';
-defineProps<{
-  pending: boolean,
-  data?: Quote
-}>()
-
-
+  defineProps<{
+    pending: boolean,
+    data: Quote | null
+  }>()
 </script>
 
 <template>
