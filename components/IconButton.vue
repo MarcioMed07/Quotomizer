@@ -4,8 +4,8 @@
 
 <script setup lang="ts">
 defineProps<{
-  icon: string,
-}>()
+  icon: string;
+}>();
 </script>
 
 <style>
@@ -16,12 +16,12 @@ defineProps<{
   align-items: center;
   gap: 10px;
   border-radius: 100px;
-  background: #34D399;
+  background: #34d399;
   border: none;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: color-mix(in srgb, #34D399 90%, black);
+  background-color: color-mix(in srgb, #34d399 90%, black);
 }
 </style>

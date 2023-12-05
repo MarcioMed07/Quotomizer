@@ -1,4 +1,4 @@
-export { };
+export {};
 declare global {
   interface Quote {
     _id: string;
@@ -9,5 +9,10 @@ declare global {
     length: number;
     dateAdded: string;
     dateModified: string;
+  }
+  interface SEOMeta {
+    title: string;
+    description: string;
+    url: string;
   }
 }

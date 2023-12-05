@@ -19,7 +19,7 @@
 
 ##### 2.3. Share on Social Media
 
-- [ ] Users should have the option to share the current quote on social media platforms like Twitter or Facebook.
+- [x] Users should have the option to share the current quote on social media platforms like Twitter or Facebook.
 - [ ] Clicking the "Share" button should open a pre-populated tweet or post with the quote and author.
 
 ##### 2.4. Themes
@@ -32,12 +32,16 @@
 
 ##### 2.6. Error Handling
 
-- [ ] In case the API request fails, the app should display a user-friendly error message.
+- [x] In case the API request fails, the app should display a user-friendly error message.
 
 ##### 2.7. Favorites
 
 - [ ] Users can mark quotes as favorites.
 - [ ] Favorite quotes should be saved locally using browser storage.
+
+#### 2.8 Translation
+- [ ] Users can choose from a list of languages and the ui should reflect this choice, by default use the browser's language
+- [ ] Quotes should be translated to the selected language
 
 #### 3. User Interaction
 

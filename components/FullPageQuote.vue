@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const { data, refresh, pending } = defineProps<{
-  pending: boolean,
-  data: Quote | null,
-  refresh?: Function
-}>()
+  pending: boolean;
+  data: Quote | null;
+  refresh?: Function;
+}>();
 </script>
 
 <template>
@@ -27,5 +27,4 @@ const { data, refresh, pending } = defineProps<{
   width: calc(100% - 2em);
   max-width: 700px;
 }
-
 </style>

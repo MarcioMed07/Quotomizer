@@ -5,6 +5,14 @@ const { data, error, pending } = await useFetch<Quote>(`${quotableUrl}/quotes/${
 if(error && error.value){
   throw createError(error.value);
 }
+if (data) {
+  const url = useRequestURL()
+  addMeta({
+    title: "Quotomizer | Your Daily Dose of Inspiration",
+    description: data.value?.content ?? "",
+    url: url.href,
+  });
+}
 </script>
 
 <template>
