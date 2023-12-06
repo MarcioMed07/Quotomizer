@@ -1,6 +1,7 @@
 # Quotomizer
 
 Quotomizer is a web application built with Nuxt 3 that allows users to generate and share random quotes from the [quotable API](https://github.com/lukePeavey/quotable). It provides a simple and elegant way to get inspired and share wisdom with others.
+Available at https://quotomizer.vercel.app/
 
 ## Features
 
@@ -42,3 +43,4 @@ Quotomizer is a web application built with Nuxt 3 that allows users to generate 
    yarn dev
    ```
 2. Open your browser and visit http://localhost:3000 to see Quotomizer in action.
+
