@@ -9,7 +9,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prettier": "prettier --write ./**/*.ts ./**/*.vue"
+    "prettier": "prettier --write ./**/*.ts ./**/*.vue",
+    "vercel-pull":"vercel pull --yes --environment=production",
+    "vercel-build":"vercel build --prod",
+    "vercel-deploy":"vercel deploy --prebuilt --prod",
+    "deploy":"yarn vercel-pull;yarn vercel-build;yarn vercel-deploy"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
