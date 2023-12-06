@@ -1,13 +1,13 @@
 <script setup lang="ts">
-const colorMode = useColorMode()
+const colorMode = useColorMode();
 const isDark = computed({
   get() {
-    return colorMode.value === 'dark'
+    return colorMode.value === "dark";
   },
   set() {
-    colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
-  }
-})
+    colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
+  },
+});
 </script>
 
 <template>
@@ -16,7 +16,11 @@ const isDark = computed({
       <img class="logo" src="/favicon.png" /><span>Quotomizer</span>
     </NuxtLink>
     <NuxtLink class="list-link" to="/quotes">List of quotes</NuxtLink>
-    <IconButton @click="isDark = !isDark" size="xs" :name="isDark ? 'i-fa6-solid-moon' : 'i-fa6-solid-sun'" />
+    <IconButton
+      @click="isDark = !isDark"
+      size="xs"
+      :name="isDark ? 'i-fa6-solid-moon' : 'i-fa6-solid-sun'"
+    />
   </header>
 </template>
 
@@ -47,4 +51,5 @@ const isDark = computed({
   font-weight: bold;
   text-decoration: none;
   font-style: italic;
-}</style>
+}
+</style>

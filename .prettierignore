@@ -1,0 +1,9 @@
+<!-- .nuxt/*
+.output/*
+.vercel/*
+.vscode/* -->
+node_modules/*
+*
+!*.ts
+!*/
+!*.vue

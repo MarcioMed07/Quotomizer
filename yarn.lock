@@ -594,6 +594,13 @@
   resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.7.16.tgz#bdc9d32d329248910325539b99e6abfce0c69f89"
   integrity sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==
 
+"@iconify-json/fa6-solid@^1.1.19":
+  version "1.1.19"
+  resolved "https://registry.yarnpkg.com/@iconify-json/fa6-solid/-/fa6-solid-1.1.19.tgz#ec931212226bf8b2b55f06ca68ccea27a09f5695"
+  integrity sha512-/R9viOcP2NIHcjjRIVnNAj40mci21ZD5uGpkKNQ+8lG/0x+mzR35a+yf7aCE6D7ovt/SJ6pMY6oO9tBZbHlcSw==
+  dependencies:
+    "@iconify/types" "*"
+
 "@iconify-json/heroicons@^1.1.13":
   version "1.1.15"
   resolved "https://registry.yarnpkg.com/@iconify-json/heroicons/-/heroicons-1.1.15.tgz#9f193230d3681625e9d20b15e3af76e0cd165f36"

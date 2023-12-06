@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prettier": "prettier --write ./**/*.ts ./**/*.vue",
+    "format": "prettier --write ./**/*.ts ./**/*.vue",
     "vercel-pull": "vercel pull --yes --environment=production",
     "vercel-build": "vercel build --prod",
     "vercel-deploy": "vercel deploy --prebuilt --prod",
@@ -24,6 +24,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@iconify-json/fa6-solid": "^1.1.19",
     "@nuxt/ui": "^2.11.0"
   }
 }

@@ -1,21 +1,19 @@
 <template>
-  <UButton :ui="{ rounded: 'rounded-full' }" :size="size ?? 'md'" square>
-    <UIcon :name="name" dynamic />
-  </UButton>
+  <UButton
+    :ui="{ rounded: 'rounded-full' }"
+    :icon="name"
+    :size="size ?? 'md'"
+    :color="color ?? 'primary'"
+    square
+  />
 </template>
 
 <script setup lang="ts">
-import type { ButtonSize } from '@nuxt/ui/dist/runtime/types';
+import type { ButtonColor, ButtonSize } from "@nuxt/ui/dist/runtime/types";
 
 defineProps<{
   name: string;
-  size?: ButtonSize
+  size?: ButtonSize;
+  color?: ButtonColor;
 }>();
 </script>
-
-<style>
-
-.button:hover {
-  background-color: color-mix(in srgb, #34d399 90%, black);
-}
-</style>

@@ -24,7 +24,7 @@
 
 ##### 2.4. Themes
 
-- [ ] The app should offer different themes or color schemes for users to choose from.
+- [x] The app should offer different themes or color schemes for users to choose from.
 
 ##### 2.5. Responsive Design
 
@@ -34,12 +34,17 @@
 
 - [x] In case the API request fails, the app should display a user-friendly error message.
 
-##### 2.7. Favorites
+##### 2.7. List of Quotes
+
+- [x] The app should display a list of all available quotes and let the user select one of them to focus
+
+##### 2.8. Favorites
 
 - [ ] Users can mark quotes as favorites.
 - [ ] Favorite quotes should be saved locally using browser storage.
 
-#### 2.8 Translation
+#### 2.9. Translation
+
 - [ ] Users can choose from a list of languages and the ui should reflect this choice, by default use the browser's language
 - [ ] Quotes should be translated to the selected language
 

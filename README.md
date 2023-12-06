@@ -23,20 +23,22 @@ Quotomizer is a web application built with Nuxt 3 that allows users to generate 
    ```bash
    git clone https://github.com/marciomed07/quotomizer.git
    ```
+
 2. Navigate to the project directory:
 
-    ```bash
-    cd quotomizer
-    ```
+   ```bash
+   cd quotomizer
+   ```
+
 3. Install dependencies:
-    ```bash
-    yarn install
-    ```
-    
+   ```bash
+   yarn install
+   ```
+
 ### Usage
 
 1. Run the development server:
-    ```bash
-    yarn dev
-    ```
+   ```bash
+   yarn dev
+   ```
 2. Open your browser and visit http://localhost:3000 to see Quotomizer in action.

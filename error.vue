@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const { error } = defineProps({
-  error: Object
-})
+  error: Object,
+});
 
-const handleError = () => clearError({ redirect: '/' })
+const handleError = () => clearError({ redirect: "/" });
 </script>
 
 <template>
-  <AppHeader/>
+  <AppHeader />
   <div class="container">
     <h1>{{ error?.statusCode }}</h1>
     <IconButton @click="handleError()" name="i-fa6-solid-house" />
@@ -28,5 +28,4 @@ const handleError = () => clearError({ redirect: '/' })
   width: 100%;
   max-width: 700px;
 }
-
 </style>

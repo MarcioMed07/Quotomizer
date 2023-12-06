@@ -10,6 +10,14 @@ declare global {
     dateAdded: string;
     dateModified: string;
   }
+  interface QuoteList {
+    count: number;
+    lastItemIndex: number;
+    page: number;
+    results: Array<Quote>;
+    totalCount: number;
+    totalPages: number;
+  }
   interface SEOMeta {
     title: string;
     description: string;
