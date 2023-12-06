@@ -11,7 +11,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <header class="header">
+  <header class="header py-2 pb-8">
     <NuxtLink class="title" to="/">
       <img class="logo" src="/favicon.png" /><span>Quotomizer</span>
     </NuxtLink>

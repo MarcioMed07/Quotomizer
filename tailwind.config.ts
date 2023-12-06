@@ -22,6 +22,9 @@ export default <Partial<Config>>{
       maxWidth: {
         "1/2": "50%",
       },
+      translate:{
+        '1/2': "50%"
+      }
     },
   },
 };

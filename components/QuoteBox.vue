@@ -73,8 +73,10 @@ const share = (id: string) => {
 <style scoped>
 .content {
   width: 100%;
-  height: 100%;
+  max-width: 720px;
   min-height: 180px;
+  max-height: 300px;
+  height: 100%;
   padding: 3rem;
   display: flex;
   flex-direction: column;
@@ -87,6 +89,7 @@ const share = (id: string) => {
   gap: 1.5rem;
   font-family: serif;
 }
+
 
 .spinner {
   font-size: 2em;
