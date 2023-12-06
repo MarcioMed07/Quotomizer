@@ -10,7 +10,7 @@ const handleError = () => clearError({ redirect: '/' })
   <AppHeader/>
   <div class="container">
     <h1>{{ error?.statusCode }}</h1>
-    <IconButton @click="handleError()" icon="home" />
+    <IconButton @click="handleError()" name="i-fa6-solid-house" />
   </div>
 </template>
 

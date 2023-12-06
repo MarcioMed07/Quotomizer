@@ -9,7 +9,7 @@ const { data, refresh, pending } = defineProps<{
 <template>
   <div class="container">
     <QuoteBox :data="data" :pending="pending" />
-    <IconButton v-if="refresh" @click="refresh()" icon="shuffle" />
+    <IconButton v-if="refresh" @click="refresh()" size="xl" name="i-fa6-solid-shuffle" />
   </div>
 </template>
 

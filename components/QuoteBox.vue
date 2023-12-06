@@ -26,26 +26,21 @@ const share = (id: string) => {
 </script>
 
 <template>
-  <div>
-    <div class="content" v-if="!pending">
-      <div class="copy">
-        <font-awesome-icon
-          @click="copy(data.content, data.author)"
-          icon="copy"
-        ></font-awesome-icon>
-        <label v-if="showCopyLabel">copied</label>
-      </div>
-      <h2 class="quote">{{ data?.content }}</h2>
-      <span class="author">{{ data?.author }}</span>
-      <div class="share">
-        <IconButton @click="share(data._id)" icon="share" />
-        <label v-if="showShareLabel">copied</label>
-      </div>
+  <UContainer :ui="{ base: 'bg-gray-100 dark:bg-gray-800' }" class="content" v-if="!pending">
+    <div class="copy" @click="copy(data.content, data.author)">
+      <UIcon name="i-fa6-regular-copy" dynamic />
+      <label v-if="showCopyLabel">copied</label>
     </div>
-    <div class="content" v-else>
-      <font-awesome-icon class="spinner" icon="spinner"></font-awesome-icon>
+    <h2 class="quote">{{ data?.content }}</h2>
+    <span class="author">{{ data?.author }}</span>
+    <div class="share">
+      <IconButton @click="share(data._id)" size="lg" name="i-fa6-solid-share" />
+      <label v-if="showShareLabel">copied</label>
     </div>
-  </div>
+  </UContainer>
+  <UContainer :ui="{ base: 'bg-gray-100 dark:bg-gray-800' }" class="content" v-else>
+    <UIcon class="spinner" name="i-fa6-solid-spinner" dynamic />
+  </UContainer>
 </template>
 
 <style scoped>
@@ -62,7 +57,6 @@ const share = (id: string) => {
   text-align: center;
   gap: 1.875rem;
   border-radius: 0.625rem;
-  background: #e5e7eb;
   box-sizing: border-box;
   position: relative;
 }
@@ -73,7 +67,6 @@ const share = (id: string) => {
   font-weight: 400;
   line-height: normal;
   font-size: 1.5em;
-  color: var(--default-gray-900, #111827);
   text-align: center;
   font-family: "Courgette";
 }
@@ -84,7 +77,6 @@ const share = (id: string) => {
   font-weight: 400;
   line-height: normal;
   font-size: 1em;
-  color: var(--default-gray-900, #111827);
   text-align: center;
 }
 
@@ -96,20 +88,22 @@ const share = (id: string) => {
 
 .copy {
   position: absolute;
-  right: 1em;
-  top: 1em;
-}
-
-.copy svg {
-  width: 1em;
-  height: 1em;
-  color: grey;
+  right: 0.5em;
+  top: 0.5em;
+  font-size: 1em;
   border-radius: 100%;
   padding: 0.5em;
   cursor: pointer;
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
 }
 
-.copy svg:hover {
+.copy .icon {
+  display: block;
+}
+
+.copy:hover {
   background-color: #00000020;
 }
 
@@ -126,7 +120,7 @@ const share = (id: string) => {
 }
 
 .spinner {
-  height: 2em;
+  font-size: 2em;
   animation: rotation 1.5s infinite linear;
 }
 

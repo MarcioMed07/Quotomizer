@@ -1,27 +1,19 @@
 <template>
-  <button class="button">
-    <font-awesome-icon :icon="icon"></font-awesome-icon>
-  </button>
+  <UButton :ui="{ rounded: 'rounded-full' }" :size="size ?? 'md'" square>
+    <UIcon :name="name" dynamic />
+  </UButton>
 </template>
 
 <script setup lang="ts">
+import type { ButtonSize } from '@nuxt/ui/dist/runtime/types';
+
 defineProps<{
-  icon: string;
+  name: string;
+  size?: ButtonSize
 }>();
 </script>
 
 <style>
-.button {
-  display: inline-flex;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: #34d399;
-  border: none;
-  cursor: pointer;
-}
 
 .button:hover {
   background-color: color-mix(in srgb, #34d399 90%, black);

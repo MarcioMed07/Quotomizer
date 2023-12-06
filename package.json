@@ -10,10 +10,10 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prettier": "prettier --write ./**/*.ts ./**/*.vue",
-    "vercel-pull":"vercel pull --yes --environment=production",
-    "vercel-build":"vercel build --prod",
-    "vercel-deploy":"vercel deploy --prebuilt --prod",
-    "deploy":"yarn vercel-pull;yarn vercel-build;yarn vercel-deploy"
+    "vercel-pull": "vercel pull --yes --environment=production",
+    "vercel-build": "vercel build --prod",
+    "vercel-deploy": "vercel deploy --prebuilt --prod",
+    "deploy": "yarn vercel-pull;yarn vercel-build;yarn vercel-deploy"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -24,8 +24,6 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/vue-fontawesome": "^3.0.5"
+    "@nuxt/ui": "^2.11.0"
   }
 }
