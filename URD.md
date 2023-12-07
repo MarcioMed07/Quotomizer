@@ -20,7 +20,7 @@
 ##### 2.3. Share on Social Media
 
 - [x] Users should have the option to share the current quote on social media platforms like Twitter or Facebook.
-- [ ] Clicking the "Share" button should open a pre-populated tweet or post with the quote and author.
+- [-] Clicking the "Share" button should open a pre-populated tweet or post with the quote and author.
 
 ##### 2.4. Themes
 
@@ -40,8 +40,8 @@
 
 ##### 2.8. Favorites
 
-- [ ] Users can mark quotes as favorites.
-- [ ] Favorite quotes should be saved locally using browser storage.
+- [x] Users can mark quotes as favorites.
+- [x] Favorite quotes should be saved locally using browser storage.
 
 #### 2.9. Translation
 
