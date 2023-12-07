@@ -57,12 +57,7 @@ const columns: {
     },
   ];
 
-const test = (row: any) => {
-  console.log(row)
-  return ''
-}
-
-const { isLiked, toggleLike } = useQuoteInteraction()
+const { isLiked } = useQuoteInteraction()
 </script>
 
 <template>
