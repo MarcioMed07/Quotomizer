@@ -1,11 +1,13 @@
-export const addMeta = ({ title, description, url }: SEOMeta) => {
+export const addMeta = ( title: string, description: string) => {
+
+  const url = useRequestURL();
   useSeoMeta({
     title: title,
     description: description,
     ogTitle: title,
     ogDescription: description,
     ogImage: "/favicon.png",
-    ogUrl: url,
+    ogUrl: url.href,
     twitterTitle: title,
     twitterDescription: description,
     twitterImage: "/favicon.png",

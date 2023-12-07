@@ -7,16 +7,10 @@ const { data, error, pending } = await useFetch<Quote>(
 if (error && error.value) {
   throw createError(error.value);
 }
-if (data) {
-  const url = useRequestURL();
-  addMeta({
-    title: "Quotomizer | Your Daily Dose of Inspiration",
-    description: data.value?.content ?? "",
-    url: url.href,
-  });
-}
+addMeta("Quotomizer | Your Daily Dose of Inspiration", data.value?.content ?? "");
+
 </script>
 
 <template>
-  <FullPageQuote :data="data" :pending="pending" />
+  <FullPageQuote v-if="data" :data="data" :pending="pending" />
 </template>

@@ -6,16 +6,10 @@ const { data, error, pending, refresh } = await useLazyFetch<Quote>(
 if (error && error.value) {
   throw createError(error.value);
 }
-if (data) {
-  const url = useRequestURL();
-  addMeta({
-    title: "Quotomizer",
-    description: "Your Daily Dose of Inspiration",
-    url: url.origin,
-  });
-}
+addMeta("Quotomizer", "Your Daily Dose of Inspiration");
+
 </script>
 
 <template>
-  <FullPageQuote :data="data" :pending="pending" :refresh="refresh" />
+  <FullPageQuote v-if="data" :data="data" :pending="pending" :refresh="refresh" />
 </template>

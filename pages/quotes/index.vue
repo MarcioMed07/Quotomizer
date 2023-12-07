@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const { quotableUrl } = useAppConfig();
 const page = ref(1);
-const totalPages = ref(1);
-const count = ref(0);
-const totalCount = ref(0);
-
 const sort = ref<{ column: string; direction: "asc" | "desc" }>({
   column: "content",
   direction: "asc",
@@ -13,6 +9,7 @@ const sort = ref<{ column: string; direction: "asc" | "desc" }>({
 const {
   data: quotes,
   pending,
+  error,
   refresh,
 } = await useAsyncData<QuoteList>(
   "quotes",
@@ -29,9 +26,13 @@ const {
     watch: [page],
   },
 );
-totalPages.value = quotes.value?.totalPages ?? 1;
-count.value = quotes.value?.count ?? 0;
-totalCount.value = quotes.value?.totalCount ?? 0;
+
+if (error && error.value) {
+  throw createError(error.value);
+}
+
+addMeta("Quotomizer | List of Quotes", "Your Daily Dose of Inspiration")
+const totalCount = ref(quotes.value?.totalCount ?? 0);
 
 const columns: {
   [key: string]: any;
@@ -40,46 +41,43 @@ const columns: {
   direction?: "asc" | "desc" | undefined;
   class?: string | undefined;
 }[] = [
-  {
-    label: "Quote",
-    key: "content",
-    sortable: true,
-    direction: "asc",
-  },
-  {
-    label: "Author",
-    key: "author",
-    sortable: true,
-  },
-];
+    {
+      key: 'heart'
+    },
+    {
+      label: "Quote",
+      key: "content",
+      sortable: true,
+      direction: "asc",
+    },
+    {
+      label: "Author",
+      key: "author",
+      sortable: true,
+    },
+  ];
 
-const onSelect = (row: Quote) => {
-  navigateTo(`/quotes/${row._id}`);
-};
+const test = (row: any) => {
+  console.log(row)
+  return ''
+}
+
+const { isLiked, toggleLike } = useQuoteInteraction()
 </script>
 
 <template>
-  <UTable
-    @select="onSelect"
-    v-model:sort="sort"
-    @update:sort="refresh"
-    :rows="quotes?.results"
-    :columns="columns"
-    :loading="pending"
-    :loading-state="{ icon: 'i-fa6-solid-spinner', label: '' }"
-  >
+  <UTable @select="(row: Quote) => navigateTo(`/quotes/${row._id}`)" v-model:sort="sort" @update:sort="refresh"
+    :rows="quotes?.results" :columns="columns" :loading="pending"
+    :loading-state="{ icon: 'i-fa6-solid-spinner', label: '' }">
     <template #content-data="{ row }">
       <span class="whitespace-break-spaces font-serif">{{ row.content }}</span>
     </template>
     <template #author-data="{ row }">
       <span class="italic font-serif">{{ row.author }}</span>
     </template>
+    <template #heart-data="{ row }">
+      <UIcon size="2xs" name="i-fa6-solid-heart" :class="isLiked(row._id) ? 'text-red-500' : 'text-gray-500'" />
+    </template>
   </UTable>
-  <UPagination
-    class="mt-4 place-content-center"
-    v-model="page"
-    show-first
-    show-last
-    :total="totalCount"
-  />
+  <UPagination class="mt-4 place-content-center" v-model="page" show-first show-last :total="totalCount" />
 </template>
