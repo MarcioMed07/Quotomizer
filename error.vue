@@ -11,7 +11,7 @@ const handleError = () => clearError({ redirect: "/" });
     <AppHeader />
     <div class="content">
       <h1 class="text-5xl">{{ error?.statusCode }}</h1>
-      <IconButton @click="handleError()" name="i-fa6-solid-house" />
+      <IconButton @click="handleError()" aria-label="go to home page" name="home" icon="i-fa6-solid-house" />
     </div>
     <AppFooter />
   </div>

@@ -1,7 +1,8 @@
 <template>
   <UButton
+    {...props}
     :ui="{ rounded: 'rounded-full' }"
-    :icon="name"
+    :icon="icon"
     :size="size ?? 'md'"
     :color="color ?? 'primary'"
     square
@@ -12,8 +13,9 @@
 import type { ButtonColor, ButtonSize } from "@nuxt/ui/dist/runtime/types";
 
 defineProps<{
-  name: string;
+  icon: string;
   size?: ButtonSize;
   color?: ButtonColor;
+  props?: any;
 }>();
 </script>

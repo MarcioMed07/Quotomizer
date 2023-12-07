@@ -12,8 +12,9 @@ const { data, refresh, pending } = defineProps<{
     <IconButton
       v-if="refresh"
       @click="refresh()"
+      aria-label="get new quote" name="shuffle"
       size="xl"
-      name="i-fa6-solid-shuffle"
+      icon="i-fa6-solid-shuffle"
     />
   </div>
 </template>

@@ -10,10 +10,12 @@ const { isLiked, toggleLike, copy, share } = useQuoteInteraction();
   <UContainer :ui="{ base: 'bg-gray-100 dark:bg-gray-800' }" class="content" v-if="!pending">
     <h2 class="quote text-2xl">{{ data?.content }}</h2>
     <span class="author italic">{{ data?.author }}</span>
-    <IconButton class="absolute top-4 left-4" @click="toggleLike(data._id)" size="xs" name="i-fa6-solid-heart"
-      v-bind:color="isLiked(data._id) ? 'red' : 'white'" />
+    <IconButton class="absolute top-4 left-4" @click="toggleLike(data._id)" size="xs" aria-label="toggle like quote"
+      name="like" icon="i-fa6-solid-heart" v-bind:color="isLiked(data._id) ? 'red' : 'white'"
+      v-bind:aria-checked="isLiked(data._id)" />
     <UPopover class="absolute top-4 right-4" :popper="{ arrow: true, placement: 'top' }">
-      <IconButton @click="copy(data.content, data.author)" size="xs" name="i-fa6-solid-copy" color="gray" />
+      <IconButton @click="copy(data.content, data.author)" size="xs" icon="i-fa6-solid-copy" color="gray" aria-label="copy quote"
+      name="copy"/>
       <template #panel>
         <div class="p-4">
           <span>copied</span>
@@ -21,7 +23,8 @@ const { isLiked, toggleLike, copy, share } = useQuoteInteraction();
       </template>
     </UPopover>
     <UPopover class="absolute bottom-4 right-4" :popper="{ arrow: true, placement: 'top' }">
-      <IconButton @click="share(data._id)" size="lg" name="i-fa6-solid-share" />
+      <IconButton @click="share(data._id)" size="lg" icon="i-fa6-solid-share" aria-label="share quote"
+      name="share"/>
       <template #panel>
         <div class="p-4">
           <span>copied</span>
