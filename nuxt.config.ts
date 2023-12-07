@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/google-fonts", "@nuxt/ui",'nuxt-simple-sitemap'],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/ui", 'nuxt-simple-sitemap'],
   googleFonts: {
     families: {
       Pacifico: true,
@@ -20,4 +20,7 @@ export default defineNuxtConfig({
   sitemap: {
     sources: ['/api/sitemap'],
   },
+  runtimeConfig: {
+    public: { gaMeasurementId: process.env.NUXT_PUBLIC_GA_MEASUREMENT_ID },
+  }
 });
