@@ -2,7 +2,7 @@ export const useQuoteInteraction = () => {
 
   const url = useRequestURL();
   const likes = useCookie<string[]>('likes')
-  const isLiked = (id: string) => likes.value.includes(id)
+  const isLiked = (id: string) => likes.value?.includes(id)
   const toggleLike = (id: string) => {
     if (isLiked(id)) {
       likes.value = likes.value.filter(currId => currId !== id)
