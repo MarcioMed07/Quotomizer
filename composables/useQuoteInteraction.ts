@@ -7,7 +7,7 @@ export const useQuoteInteraction = () => {
     if (isLiked(id)) {
       likes.value = likes.value.filter(currId => currId !== id)
     } else {
-      likes.value = [...likes.value, id]
+      likes.value = [...likes.value ?? [], id]
     }
   }
   const copy = (quote: string, author: string) => {
