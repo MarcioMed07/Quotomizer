@@ -21,6 +21,10 @@ const {
         order: sort.value.direction,
         limit: 10,
       },
+    }).then((value:any)=>{
+      totalCount.value = value.totalCount
+      console.log(value)
+      return value as QuoteList
     }),
   {
     watch: [page],
@@ -75,6 +79,6 @@ const { isLiked } = useQuoteInteraction()
         <UIcon size="2xs" name="i-fa6-solid-heart" :class="isLiked(row._id) ? 'text-red-500' : 'text-gray-500'" />
       </template>
     </UTable>
-    <UPagination class="mt-4 place-content-center" v-model="page" show-first show-last :total="totalCount" />
+    <UPagination class="mt-4 place-content-center" v-model="page" show-first show-last v-model:total="totalCount" />
   </div>
 </template>
