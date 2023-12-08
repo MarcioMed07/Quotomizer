@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { data, refresh, pending } = defineProps<{
   pending: boolean;
-  data: Quote;
+  data: Quote | null;
   refresh?: Function;
 }>();
 </script>
@@ -12,7 +12,8 @@ const { data, refresh, pending } = defineProps<{
     <IconButton
       v-if="refresh"
       @click="refresh()"
-      aria-label="get new quote" name="shuffle"
+      aria-label="get new quote"
+      name="shuffle"
       size="xl"
       icon="i-fa6-solid-shuffle"
     />

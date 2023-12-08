@@ -1,5 +1,4 @@
-export const addMeta = ( title: string, description: string) => {
-
+export const addMeta = (title: string, description: string) => {
   const url = useRequestURL();
   useSeoMeta({
     title: title,
@@ -18,6 +17,12 @@ export const addMeta = ( title: string, description: string) => {
     htmlAttrs: {
       lang: "en",
     },
+    meta: [
+      {
+        name: "google-site-verification",
+        content: "nu-77OieqhVk61RxxNfTlBh2zMcTX7Hvb1o57PUGpxE",
+      },
+    ],
     link: [
       {
         rel: "icon",

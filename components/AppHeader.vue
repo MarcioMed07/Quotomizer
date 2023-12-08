@@ -13,11 +13,20 @@ const isDark = computed({
 <template>
   <header class="header py-2 pb-8">
     <NuxtLink class="title" to="/">
-      <img class="logo" src="/favicon.png" alt="Quotomizer logo"/><span>Quotomizer</span>
+      <img class="logo" src="/favicon.png" alt="Quotomizer logo" /><span
+        >Quotomizer</span
+      >
     </NuxtLink>
     <NuxtLink class="list-link" to="/quotes">List of quotes</NuxtLink>
-    <IconButton @click="isDark = !isDark" size="xs" name="dark mode toggle" aria-label="dark mode toggle" role="switch" :aria-checked="isDark"
-      :icon="isDark ? 'i-fa6-solid-moon' : 'i-fa6-solid-sun'" />
+    <IconButton
+      @click="isDark = !isDark"
+      size="xs"
+      name="dark mode toggle"
+      aria-label="dark mode toggle"
+      role="switch"
+      :aria-checked="isDark"
+      :icon="isDark ? 'i-fa6-solid-moon' : 'i-fa6-solid-sun'"
+    />
   </header>
 </template>
 

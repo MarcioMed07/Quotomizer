@@ -1,5 +1,5 @@
 export default defineSitemapEventHandler(async (e) => {
-  const { quotableUrl } = useAppConfig()
+  const  quotableUrl  = process.env.NUXT_PUBLIC_QUOTABLE_API ?? 'https://api.quotable.io'//useAppConfig()
   let page = 1;
   let lastPage = 1;
   let idList:string[] = []

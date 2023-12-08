@@ -11,7 +11,7 @@ const {
   pending,
   error,
   refresh,
-} = await useAsyncData<QuoteList>(
+} = await useLazyAsyncData<QuoteList>(
   "quotes",
   () =>
     $fetch(`${quotableUrl}/quotes`, {
@@ -61,18 +61,20 @@ const { isLiked } = useQuoteInteraction()
 </script>
 
 <template>
-  <UTable @select="(row: Quote) => navigateTo(`/quotes/${row._id}`)" v-model:sort="sort" @update:sort="refresh"
-    :rows="quotes?.results" :columns="columns" :loading="pending"
-    :loading-state="{ icon: 'i-fa6-solid-spinner', label: '' }">
-    <template #content-data="{ row }">
-      <span class="whitespace-break-spaces font-serif">{{ row.content }}</span>
-    </template>
-    <template #author-data="{ row }">
-      <span class="italic font-serif">{{ row.author }}</span>
-    </template>
-    <template #heart-data="{ row }">
-      <UIcon size="2xs" name="i-fa6-solid-heart" :class="isLiked(row._id) ? 'text-red-500' : 'text-gray-500'" />
-    </template>
-  </UTable>
-  <UPagination class="mt-4 place-content-center" v-model="page" show-first show-last :total="totalCount" />
+  <div>
+    <UTable @select="(row: Quote) => navigateTo(`/quotes/${row._id}`)" v-model:sort="sort" @update:sort="refresh"
+      :rows="quotes?.results" :columns="columns" :loading="pending"
+      :loading-state="{ icon: 'i-fa6-solid-spinner', label: '' }">
+      <template #content-data="{ row }">
+        <span class="whitespace-break-spaces font-serif">{{ row.content }}</span>
+      </template>
+      <template #author-data="{ row }">
+        <span class="italic font-serif">{{ row.author }}</span>
+      </template>
+      <template #heart-data="{ row }">
+        <UIcon size="2xs" name="i-fa6-solid-heart" :class="isLiked(row._id) ? 'text-red-500' : 'text-gray-500'" />
+      </template>
+    </UTable>
+    <UPagination class="mt-4 place-content-center" v-model="page" show-first show-last :total="totalCount" />
+  </div>
 </template>
