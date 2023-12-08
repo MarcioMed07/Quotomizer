@@ -23,7 +23,6 @@ const {
       },
     }).then((value:any)=>{
       totalCount.value = value.totalCount
-      console.log(value)
       return value as QuoteList
     }),
   {
