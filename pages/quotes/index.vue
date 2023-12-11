@@ -6,6 +6,8 @@ const sort = ref<{ column: string; direction: "asc" | "desc" }>({
   direction: "asc",
 });
 
+const totalCount = ref<number>(0);
+
 const {
   data: quotes,
   pending,
@@ -21,8 +23,8 @@ const {
         order: sort.value.direction,
         limit: 10,
       },
-    }).then((value:any)=>{
-      totalCount.value = value.totalCount
+    }).then((value: any) => {
+      totalCount.value = value.totalCount ?? 0
       return value as QuoteList
     }),
   {
@@ -30,12 +32,13 @@ const {
   },
 );
 
+totalCount.value = quotes.value?.totalCount ?? 0
+
 if (error && error.value) {
   throw createError(error.value);
 }
 
 addMeta("Quotomizer | List of Quotes", "Your Daily Dose of Inspiration")
-const totalCount = ref(quotes.value?.totalCount ?? 0);
 
 const columns: {
   [key: string]: any;
